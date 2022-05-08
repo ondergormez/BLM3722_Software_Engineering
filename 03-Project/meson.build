@@ -6,6 +6,7 @@ executable('LanguageSchool',
            'Person.cpp',
            'Registrar.cpp',
            'SchoolBranch.cpp',
+           'Student.h',
            'Teacher.cpp',
            'Worker.cpp',
            install: false
