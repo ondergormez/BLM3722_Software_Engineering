@@ -2,6 +2,7 @@
 
 #include <string>
 
+// TODO: SetLecturer?
 namespace LanguageSchool
 {
     class Course

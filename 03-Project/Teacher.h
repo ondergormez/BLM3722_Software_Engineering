@@ -11,9 +11,10 @@ namespace LanguageSchool
     class Teacher : public Worker
     {
     public:
-        std::vector<std::string> languages;
-        std::vector<SchoolBranch> classLocations;
-        std::string availableDays;
-        std::string availableHours;
+    private:
+        std::vector<std::string> m_languages;
+        std::vector<SchoolBranch> m_classLocations;
+        std::string m_availableDays;
+        std::string m_availableHours;
     };
 } // LanguageSchool

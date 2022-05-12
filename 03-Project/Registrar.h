@@ -9,5 +9,6 @@ namespace LanguageSchool
     {
     public:
         bool registerStudentForClass();
+        registerStudent();
     };
 } // LanguageSchool
