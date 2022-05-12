@@ -6,3 +6,5 @@ int main()
 
     return 0;
 }
+
+// TODO: Derslere kota ekle. Dökümanlarda kendi tanımladığımızı belirt

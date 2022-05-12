@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "Person.h"
+#include "Course.h"
 
 namespace LanguageSchool
 {
@@ -13,13 +14,13 @@ namespace LanguageSchool
     {
 
     public:
-        void updateName(std::string newName);
-        std::string getName();
+        bool addToCourse(Course &course);
+        bool deletFromCourse(Course &course);
 
     private:
-        std::vector<std::string> courses;
-        std::vector<std::string> courseLevel;
-        std::string paymentInfos;
+        std::vector<std::string> m_courses;
+        std::vector<std::string> m_courseLevel;
+        std::string m_paymentInfos;
     }
 
 } // LanguageSchool

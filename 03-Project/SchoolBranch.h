@@ -18,5 +18,6 @@ namespace LanguageSchool
         // table tennis, langırt, ...
         std::vector<std::string> socialBenefits;
         std::vector<ClassRoom> allClasses;
+        bool isActiveBranch;
     };
 } // LanguageSchool
