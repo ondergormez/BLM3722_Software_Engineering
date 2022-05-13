@@ -8,3 +8,6 @@ int main()
 }
 
 // TODO: Derslere kota ekle. Dökümanlarda kendi tanımladığımızı belirt
+
+//TODO: 1 modül daha seç, senaryonusu oluştur, state diagramını çiz
+//TODO: 1 modül daha seç, senaryosunu oluştur, activity diagramını çiz
