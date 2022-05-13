@@ -6,7 +6,6 @@ sequenceDiagram
     participant Öğrenci Modülü
     participant Öğrenci Kaydı
     participant Ders Kaydı
-    participant Ödeme Modülü
 
     Kayıt Görevlisi->>+Bilgi Sistemi: Login(userName, Password)
     alt Login Başarısız
@@ -31,14 +30,5 @@ sequenceDiagram
         Ders Kaydı-->>-Kayıt Görevlisi: errorMessage()
     else Öğrenci kaydı başarılı
         Ders Kaydı-->>Kayıt Görevlisi:       
-    end 
-
-    Kayıt Görevlisi->>+Ödeme Modülü: newPayment(paymentCredentials)
-    alt Ödeme bilgisi doğrulaması başarısız
-         Note right of Kayıt Görevlisi: Hatalı ödeme bilgisi
-        Ödeme Modülü-->>-Kayıt Görevlisi: errorMessage()
-    else Öğrenci kaydı başarılı
-        Ödeme Modülü-->>Kayıt Görevlisi:       
-    end
-    
+    end    
 ```
