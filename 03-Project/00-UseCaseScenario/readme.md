@@ -11,7 +11,7 @@
 | Kullanım Senaryosu:        | Öğrencinin Ders Kaydı                                                                               |
 | -------------------------- | --------------------------------------------------------------------------------------------------- |
 | Birincil Aktör:            | Kayıt Görevlisi                                                                                     |
-| İlgililer ve Beklentileri: | İlgili 1: Öğrenci. Kaydının düzgün bir şekilde tamamlanmış olmasını beklemektedir.                  |
+| İlgililer ve Beklentileri: | İlgili 1: Öğrenci. Ders kaydının başarılı bir şekilde tamamlanmış olmasını beklemektedir.           |
 |                            | İlgili 2: Kayıt Görevlisi: Sistemin kullanımının kolay olmasını beklemektedir.                      |
 | Ön Koşullar:               | Şube aktif olarak hizmet verebiliyor olmalıdır. Kapatılmış veya yeni açılacak bir şube olmamalıdır. |
 |                            | Öğrencinin belgeleri tamamlanmış olmalı ve kayıt koşullarını sağlamalıdır.                          |
@@ -22,10 +22,10 @@
 |                            | 2) Kayıt görevlisi öğrenci modülüne girer.                                                          |
 |                            | 3) Yeni öğrenci kaydı bölümüne girer.                                                               |
 |                            | 4) Öğrencinin adı, soyadı, doğum tarihi, ev ve cep telefonları, e-posta adresi bilgileri sisteme girilir.             |
-|                            | 5) Öğrencinin kayıt yaptırmak istediği kursa ait, kurs adı, kur ve kurs saati bilgilerini girilir.                                                          |
-|                            | 6) Ödeme bilgileri girilir.                                                          |
-|                            | 7) Ders kaydı tamamlanır, öğrenci bilgileri ekranına geri dönülür.                                                    |
+|                            | 5) Öğrencinin kayıt yaptırmak istediği kursa ait, kurs adı, kur ve kurs saati ile şube bilgilerini girilir.                                                          |
+|                            | 6) Ders kaydı tamamlanır, öğrenci bilgileri ekranına geri dönülür.                                                    |
 | Alternatif Senaryo:        | 1a) Kayıt görevlisi yanlış kullanıcı adı veya şifre girmiş ise.<br>  &emsp;  1) Kayıt görevlisine "Hatalı şifre veya kullanıcı adı" mesajı <br>  &emsp;  gösterilir.  <br>  &emsp; 2) 1. adımın tekrar etmesi beklenir.                                                    |
 |                            | 4a) Öğrencinin kişisel bilgilerinden biri hatalı girilmiş ise. <br>  &emsp; 1) "İlgili kullanıcı bilgisini yanlış ya da eksik girdiniz" mesajı gösterilir.  <br>  &emsp; 2) 4. adımın tekrar edilmesi beklenir.   |
-|                            | 5a) Kayıt yapılmak istenen kursun kotası dolmuş ise.  <br>  &emsp; 1) "Kursa kaydolabilecek öğrenci sayısını aşmaktasınız" mesajı gösterilir.  <br>  &emsp; 2) Ders kayıt ekranı kapatılır.                                 |
-|                            | 6a) Ödeme bilgileri doğrulaması başarısız ise.    <br>  &emsp; 1) "Hatalı ödeme bilgisi" mesajı gösterilir. <br>  &emsp; 2) 6. adımın tekrar edilmesi beklenir.                                    |
+|                            | 5a) Kayıt yapılmak istenen kursun kotası dolmuş ise ya da kurs seçilen şubede.  <br>  &emsp; 1) "Kursa kaydolabilecek öğrenci sayısını aşmaktasınız" mesajı gösterilir.  <br>  &emsp; 2) 5. adımın tekrar etmesi beklenir.                                               |
+|                            | 5b) Kayıt yapılmak istenen kurs seçilen şubede açılmamış ise. <br>  &emsp; 1) "İlgili kurs seçilen şubede açılmamıştır" mesajı gösterilir.  <br>  &emsp; 2) 5. adımın tekrar etmesi beklenir.                                               |
+
