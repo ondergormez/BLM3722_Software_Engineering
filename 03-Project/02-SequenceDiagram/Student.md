@@ -15,9 +15,20 @@ sequenceDiagram
     end
     Kayıt Görevlisi->>+Öğrenci Modülü: registerStudent()
     Öğrenci Modülü->>+Öğrenci Kaydı: addNewStudent(name, surname, ...)
+    alt Yanlış kişisel bilgiler
+         Bilgi Sistemi-->>Kayıt Görevlisi: errorMessage()
+      else Login Başarılı
+        Note right of Kayıt Görevlisi: Hoşgeldiniz
+        Öğrenci Kaydı-->>Öğrenci Modülü: 
+    end     
     alt Öğrenci Bilgilerini Kaydet
         Öğrenci Kaydı->>Öğrenci Kaydı: Veri tabınan bilgileri yaz
     end
-    Öğrenci Kaydı-->>-Öğrenci Modülü: return
-    Öğrenci Modülü-->>-Kayıt Görevlisi: return
+    %%Öğrenci Kaydı-->>-Öğrenci Modülü: return
+    %%Öğrenci Modülü-->>-Kayıt Görevlisi: return
+
+    Öğrenci Kaydı->>Ders Kaydı: return
+
+    Ders Kaydı->>Ödeme Modülü: return
+
 ```

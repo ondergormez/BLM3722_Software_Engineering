@@ -21,9 +21,11 @@
 | Ana Senaryo:               | 1) Kayıt görevlisi sisteme kullanıcı adı ve şifresi ile giriş yapar.                                |
 |                            | 2) Kayıt görevlisi öğrenci modülüne girer.                                                          |
 |                            | 3) Yeni öğrenci kaydı bölümüne girer.                                                               |
-|                            | 4) Öğrenci isim, yazıldığı kurs ve kur, ev ve cep telefonları, ödeme bilgilerini girer.             |
-|                            | 5) Kaydet butonuna basarak kaydı tamamlar.                                                          |
-| Alternatif Senaryo:        | 1a) Kayıt görevlisi yanlış şifre girdiğinde sistem hata verir ve giriş yapılmaz.                    |
-|                            | 4a) Öğrencinin yazılmak istediği derste kota yok ise sistem uyarı verir ve kayıt işlemini yapmaz.   |
-|                            | 4b) Cep telefonu numarası formata uygunsuz girildiğinde hata verir.                                 |
-|                            | 4c) Ödeme bilgileri doğrulaması başarısız olursa hata verir.                                        |
+|                            | 4) Öğrencinin adı, soyadı, doğum tarihi, ev ve cep telefonları, e-posta adresi bilgileri sisteme girilir.             |
+|                            | 5) Öğrencinin kayıt yaptırmak istediği kursa ait, kurs adı, kur ve kurs saati bilgilerini girilir.                                                          |
+|                            | 6) Ödeme bilgileri girilir.                                                          |
+|                            | 7) Ders kaydı tamamlanır, öğrenci bilgileri ekranına geri dönülür.                                                    |
+| Alternatif Senaryo:        | 1a) Kayıt görevlisi yanlış kullanıcı adı veya şifre girmiş ise.<br>  &emsp;  1) Kayıt görevlisine "Hatalı şifre veya kullanıcı adı" mesajı <br>  &emsp;  gösterilir.  <br>  &emsp; 2) 1. adımın tekrar etmesi beklenir.                                                    |
+|                            | 4a) Öğrencinin kişisel bilgilerinden biri hatalı girilmiş ise. <br>  &emsp; 1) "İlgili kullanıcı bilgisini yanlış ya da eksik girdiniz" mesajı gösterilir.  <br>  &emsp; 2) 4. adımın tekrar edilmesi beklenir.   |
+|                            | 5a) Kayıt yapılmak istenen kursun kotası dolmuş ise.  <br>  &emsp; 1) "Kursa kaydolabilecek öğrenci sayısını aşmaktasınız" mesajı gösterilir.  <br>  &emsp; 2) Ders kayıt ekranı kapatılır.                                 |
+|                            | 6a) Ödeme bilgileri doğrulaması başarısız ise.    <br>  &emsp; 1) "Hatalı ödeme bilgisi" mesajı gösterilir. <br>  &emsp; 2) 6. adımın tekrar edilmesi beklenir.                                    |
