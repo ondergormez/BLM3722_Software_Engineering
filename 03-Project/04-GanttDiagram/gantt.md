@@ -9,8 +9,8 @@ gantt
     G5           : a5, after a4, 6d
 ```
 
-G1: Proje planının çıkarılması
-G2: İsteklerin modellenmesi
-G3: Nesneye dayalı modelleme
-G4: Nesneye dayalı tasarım
-G5: Birim testi sınamaları
+G1: Proje planının çıkarılması <br>
+G2: İsteklerin modellenmesi <br>
+G3: Nesneye dayalı modelleme <br>
+G4: Nesneye dayalı tasarım <br>
+G5: Birim testi sınamaları <br>
