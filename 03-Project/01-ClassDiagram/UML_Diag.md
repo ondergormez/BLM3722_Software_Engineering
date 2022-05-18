@@ -82,9 +82,9 @@ classDiagram
 
 
     class Student{
-      -m_courses :vector~String~ 
-      -m_courseLevel :vector~String~ 
-      -m_paymentInfos :String 
+      -s_courses :vector~String~ 
+      -s_courseLevel :vector~String~ 
+      -s_paymentInfos :String 
       +newStudent() Student
       +deleteStudent()
       +addToCourse(course: Course) bool
@@ -92,21 +92,21 @@ classDiagram
     }
 
     class Worker{
-      -m_workStartDate :String 
-      -m_workEndDate :String 
-      -m_isActiveWorker :bool 
-      -m_salary : int 
-      -m_role : String
+      -w_workStartDate :String 
+      -w_workEndDate :String 
+      -w_isActiveWorker :bool 
+      -w_salary : int 
+      -w_role : String
       +updateSalary(newSalary: double) void
       +newWorker() Worker
       +deleteWorker(worker: Worker) bool
     }
     
     class Teacher{
-      -m_languages : vector~String~ 
-      -m_classBranches : vector~SchoolBranch~ 
-      -m_availableDays : String 
-      -m_availableHours : String 
+      -t_languages : vector~String~ 
+      -t_classBranches : vector~SchoolBranch~ 
+      -t_availableDays : String 
+      -t_availableHours : String 
       +newTeacher()  Teacher
     }
 
@@ -136,20 +136,20 @@ classDiagram
     SchoolBranch *-- Classroom 
     Classroom *-- Course
     class SchoolBranch{
-        -m_name : String
-        -m_address : String
-        -m_publicTransport : String
-        -m_privateTransport : String
-        -m_socialBenefits : vector~String~ 
-        -m_allClasses : vector~ClassRoom~ 
+        -sc_name : String
+        -sc_address : String
+        -sc_publicTransport : String
+        -sc_privateTransport : String
+        -sc_socialBenefits : vector~String~ 
+        -sc_allClasses : vector~ClassRoom~ 
         +showClassrooms() : vector~ClassRoom~
         +addNewClassroom(classroom: Classroom) bool
         +deleteClassroom(classroom: Classroom) bool
     }
 
     class Classroom{
-        -m_name : String
-        -m_capacity : int
+        -cl_name : String
+        -cl_capacity : int
         -courseList : vector~Course~
         +showCourses() : vector~Course~
         +addNewCourse(course: Course) bool
@@ -157,14 +157,14 @@ classDiagram
     }
 
     class Course{
-        -m_name : String
-        -m_capacity : int
-        -m_registeredStudentCount : int
-        -m_level : String
-        -m_course_classroom : Classroom
-        -m_studentList : vector~Student~
-        -m_teacher : Teacher
-        -m_date : Date
+        -co_name : String
+        -co_capacity : int
+        -co_registeredStudentCount : int
+        -co_level : String
+        -co_course_classroom : Classroom
+        -co_studentList : vector~Student~
+        -co_teacher : Teacher
+        -co_date : Date
         +setName(newCourseName: String) void
         +getName() String
         +showStudents()  vector~Student~
@@ -174,10 +174,10 @@ classDiagram
 ```mermaid
 classDiagram
     class InformationSystem{
-      -m_total_users : int
-      -m_total_branches : int
-      -m_worker_list vector~Worker~
-      -m_student_list vector~Student~
+      -i_total_users : int
+      -i_total_branches : int
+      -i_worker_list vector~Worker~
+      -i_student_list vector~Student~
       +addNewWorker()
       +deleteWorker()
       +addNewStudent()
