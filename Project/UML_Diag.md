@@ -67,39 +67,39 @@ classDiagram
     Worker <|-- SystemAdmin: Interitance
 
     class Person{
-    -p_name: String
-    -p_surname: String
-    -p_age: int
-    -p_gender: String
-    -p_mobilephone: String
-    -p_phone: String
-    -p_email: String
-    -p_address: String
-    +Person(String name, String surname, String mobilephone, String phone, String email, int age, String gender, String address)
-    +setName(String newName) void
-    +getName() String
+    -name: String
+    -surname: String
+    -age: int
+    -gender: String
+    -mobile_phone: String
+    -phone: String
+    -email: String
+    -address: String
+    +new_person(String name, String surname, String mobile_phone, String phone, String email, int age, String gender, String address)
+    +set_name(String new_name) void
+    +get_name() String
     }
 
 
     class Student{
-      -s_courses :vector~String~ 
-      -s_courseLevel :vector~String~ 
-      -s_paymentInfos :String 
-      +newStudent() Student
-      +deleteStudent()
-      +addToCourse(course: Course) bool
-      +deleteFromCourse(course: Course) bool
+      -courses :vector~String~ 
+      -course_level :vector~String~ 
+      -payment_infos :String 
+      +new_student(person: Person, course_list: vector~String~, course_levels: vector~String~, payment_infos: String) Student
+      +delete_student()
+      +add_to_course(course: course) bool
+      +delete_from_course(course: course) bool
     }
 
     class Worker{
-      -w_workStartDate :String 
-      -w_workEndDate :String 
-      -w_isActiveWorker :bool 
-      -w_salary : int 
-      -w_role : String
-      +updateSalary(newSalary: double) void
-      +newWorker() Worker
+      -work_start_date : String 
+      -work_end_date : String 
+      -active_worker : bool 
+      -salary : int 
+      -role : String
+      +new_worker(person: Person, start_date :String, end_date :String, active_worker :bool, salary : int,  role : String) Worker
       +deleteWorker(worker: Worker) bool
+      +update_salary(new_salary: double) void
     }
     
     class Teacher{
