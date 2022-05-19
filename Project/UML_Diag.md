@@ -89,6 +89,7 @@ classDiagram
       -course_level :vector~String~ 
       -payment_infos :String 
       +new_student(person: Person, course_list: vector~String~, course_levels: vector~String~, payment_infos: String) Student
+      +get_course_list() : vector~String~
       +delete_student() bool
     }
 ```

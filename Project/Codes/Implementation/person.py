@@ -1,7 +1,5 @@
 import datetime as date
 
-from numpy import array
-
 class Person():
 
     def __init__(self, name:str, surname:str, birthday:date.datetime, gender:str, mobile_phone:str, phone:str, email:str, address:str, syst_priv:bool):

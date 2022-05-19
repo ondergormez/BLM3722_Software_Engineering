@@ -1,4 +1,5 @@
 import person
+import student
 import datetime
 
 name = 'Batuhan'
@@ -16,3 +17,9 @@ print(person1, '\n')
 mp, p, eml, addrss = person1.get_contact_info()
 print(mp, p, eml, addrss, '\n')
 
+student1 = student.Student(person1, ('English', 'German'), ('A1', 'B1'), (4, 5))
+
+s1_course_list, total_courses = student1.get_course_list()
+print(s1_course_list)
+
+print(student1.payment_infos)
