@@ -9,17 +9,15 @@ class Student(Person):
         self.payment_infos = payment_infos
 
     def __str__(self):
-        f_str1 = 'Name: ' + f"{self.name}"
-        f_str2 = 'Surname: ' + f"{self.surname}"
-        f_str3 = 'Birthday: ' + f"{self.birthday.strftime('%Y-%m-%d')}"
-        f_str4 = 'Gender: ' + f"{self.gender}"
-        f_str5 = 'Mobile Phone: ' + f"{self.mobile_phone}"
-        f_str6 = 'Phone: ' + f"{self.phone}"
-        f_str7 = 'Email: ' + f"{self.email}"
-        f_str8 = 'Address: ' + f"{self.address}"     
-        f_str9 = 'System Privilege: ' + f"{self.syst_priv}"
-        f_str10 = f_str1 + '\n' + f_str2 + '\n'  + f_str3 + '\n'  + f_str4 + '\n'  + f_str5 + '\n'  + f_str6 + '\n'  + f_str7 + '\n'  + f_str8 + '\n'  + f_str9
-        return f_str10
+         return    ( f"   Student Information\n"+
+                     f"----------------------------\n"+
+                     f"Name: {self.name}\n"+
+                     f"Surname: {self.surname}\n"+
+                     f"Gender: {self.gender}\n"+
+                     f"Mobile Phone: {self.mobile_phone}\n"+
+                     f"Phone: {self.phone}\n"+
+                     f"Email: {self.email}\n"+
+                     f"----------------------------\n")       
     
     def get_course_list(self) ->  tuple:
         tuple_len = len(self.courses)
