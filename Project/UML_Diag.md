@@ -80,8 +80,10 @@ classDiagram
     +set_name(new_name: String ) void
     +get_info() String
     }
+```
 
-
+```mermaid
+classDiagram
     class Student{
       -courses :vector~String~ 
       -course_level :vector~String~ 
@@ -89,7 +91,10 @@ classDiagram
       +new_student(person: Person, course_list: vector~String~, course_levels: vector~String~, payment_infos: String) Student
       +delete_student() bool
     }
+```
 
+```mermaid
+classDiagram
     class Worker{
       -work_start_date : String 
       -work_end_date : String 
@@ -100,7 +105,10 @@ classDiagram
       +delete_worker() bool
       +update_salary(new_salary: double) void
     }
-    
+```
+
+```mermaid
+classDiagram    
     class Teacher{
       -languages : vector~String~ 
       -available_branches : vector~SchoolBranch~ 
@@ -109,7 +117,10 @@ classDiagram
       +new_teacher(person: Person, languages : vector~String~, available_branches : vector~SchoolBranch~, available_days : String, available_hours : String)  Teacher
      +delete_teacher() bool
     }
+```
 
+```mermaid
+classDiagram
     class Registrar{
       -user_name :String
       -password :String
@@ -121,7 +132,10 @@ classDiagram
       +delete_from_course(course: Course) bool
       +register_payment(student: Student, payment_info: student.payment_infos)
     }
+```
 
+```mermaid
+classDiagram
     class SystemAdmin{
       -user_name : String
       -password : String
@@ -130,9 +144,9 @@ classDiagram
       +log_out() bool
       +add_new_branch(new_branch: SchoolBranch)
     }
-
-
 ```
+
+
 
 * Yukarıda detayı verilen sınıfların detayları tekrar yazılmamıştır.
 
