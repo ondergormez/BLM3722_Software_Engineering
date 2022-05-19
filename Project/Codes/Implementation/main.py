@@ -1,4 +1,4 @@
-from calendar import MONDAY
+from calendar import MONDAY, c
 import person
 import student
 import worker
@@ -10,56 +10,132 @@ import datetime
 
 name = 'Batuhan'
 surname = 'Hangün'
+id_number = '12345545'
 birthday = datetime.date(1991, 8, 19)
 gender = 'Male'
 mobile_phone = '05336833244'
 phone = '02129854478'
 email = 'batuhan_hangun@mymail.com'
 address = '59/5, Maslak, İstanbul'
-person1 = person.Person(name, surname, birthday, gender, mobile_phone, phone, email, address)
+person1 = person.Person(name, surname, id_number, birthday, gender,
+                        mobile_phone, phone, email, address)
 
-student1 = student.Student(person1, ('English', 'German'), ('A1', 'B1'), (4, 5))
-print(student1.email)
+name = 'Enes'
+surname = 'Şanlı'
+id_number = '32345545'
+birthday = datetime.date(1991, 8, 19)
+gender = 'Male'
+mobile_phone = '05656833214'
+phone = '02121234443'
+email = 'esanli@esanli.com'
+address = '45/3, Levent, İstanbul'
+person2 = person.Person(name, surname, id_number, birthday, gender,
+                        mobile_phone, phone, email, address)
 
-# s1_course_list, total_courses = student1.get_course_list()
-# print(s1_course_list)
+course_list = ('English', 'German')
+course_levels = ('A1', 'B1')
+payment_infos = (4, 5)
+student1 = student.Student(
+    person1, course_list, course_levels, payment_infos)
 
-
-# print(student1.payment_infos)
-# start_date = datetime.date(1991, 8, 19)
-# worker_role = 'Teacher'
-# worker1 = worker.Worker(person1, start_date, True, 30000, worker_role)
-
-# print('Old salary: ', worker1.salary)
-# worker1.update_salary(50000)
-# print('Old salary: ', worker1.salary)
-# worker1.end_contract()
-# print(worker1.end_date)
-
-
-# available_days =  ("Monday", "Friday", "Thursday")
-# available_hours = (("15:00", "16:00"), ("12:00", "14:00"), ("09:00"))
-# language_skills = ("English")
-# available_branches = ("Fatih", "Taksim")
-# teacher1 = teacher.Teacher(person1, worker1, language_skills, available_branches, available_days, available_hours)
-
-
-# teacher1.set_available_times()
-
-# if teacher1.get_available_times("Friday", "12:00") == True:
-#     print("SEKS\n")
-# else:
-#     print("NO SEKS\n")
+course_list = ('German', 'Russian')
+course_levels = ('A1', 'B1')
+payment_infos = (5, 3)
+student2 = student.Student(
+    person2, course_list, course_levels, payment_infos)
+print(student2)
 
 
+name = 'Gregory'
+surname = 'Ruslanov'
+id_number = '12345454'
+birthday = datetime.date(1991, 3, 11)
+gender = 'Male'
+mobile_phone = '05335433244'
+phone = '02129865478'
+email = 'ruslanov_russian@mymail.com'
+address = '21/3, Bebek, İstanbul'
+person3 = person.Person(name, surname, id_number, birthday, gender,
+                        mobile_phone, phone, email, address)
+start_date = datetime.date(2010, 3, 12)
+worker_role = 'Teacher'
+worker1 = worker.Worker(person3, start_date, True, 30000, worker_role)
+available_days = ["Monday", "Friday", "Thursday"]
+available_hours = (("15:00", "16:00"), ("12:00", "14:00"), ("09:00"))
+language_skills = ("Russian")
+available_branches = ("Maslak", "Levent")
+teacher1 = teacher.Teacher(person3, worker1, language_skills,
+                           available_branches, available_days, available_hours)
+teacher1.set_available_times()
 
-# name = "English"
-# capacity = 32
-# student_count = 24
-# level = "Advanced"
-# course_teacher = teacher1
-# classroom1 = 'A123'
-# date = datetime.date(2022, 5, 15)
-# course1 = course.Course(name, capacity, level, course_teacher, classroom1, date)
+print(teacher1)
 
+
+name = 'Friedrich'
+surname = 'Schütze'
+id_number = '12345454'
+birthday = datetime.date(1970, 2, 4)
+gender = 'Male'
+mobile_phone = '05334333244'
+phone = '02129865658'
+email = 'schützefried@mymail.com'
+address = '12/2, Taksim, İstanbul'
+person4 = person.Person(name, surname, id_number, birthday, gender,
+                        mobile_phone, phone, email, address)
+start_date = datetime.date(2010, 3, 12)
+worker_role = 'Teacher'
+worker2 = worker.Worker(person4, start_date, True, 40000, worker_role)
+available_days = ["Wednesday"]
+available_hours = (("15:00", "16:00", "17:00"))
+language_skills = ("German")
+available_branches = ("Maslak", "Levent")
+teacher2 = teacher.Teacher(person4, worker2, language_skills,
+                           available_branches, available_days, available_hours)
+teacher2.set_available_times()
+
+
+classroom_name = "A134"
+classroom_capacity = 32
+classroom1 = classroom.Classroom(classroom_name, classroom_capacity)
+
+name = "Russian"
+capacity = 32
+student_count = 24
+level = "Advanced"
+course_teacher = teacher1
+course_class1 = classroom_name
+date = datetime.date(2022, 5, 15)
+course1 = course.Course(name, capacity, level,
+                        course_teacher, course_class1, date)
+print(course1)
+course1.add_student(student1)
+course1.add_student(student2)
 # print(course1)
+course1.show_students()
+course1.delete_student(student1)
+print(course1)
+course1.show_students()
+
+
+name = "German"
+capacity = 32
+student_count = 24
+level = "Advanced"
+course_teacher = teacher1
+course_class2 = classroom1.name
+date = datetime.date(2022, 5, 15)
+course2 = course.Course(name, capacity, level,
+                        course_teacher, course_class2, date)
+print(course2)
+course2.add_student(student1)
+course2.add_student(student2)
+course2.show_students()
+course2.delete_student(student1)
+print(course2)
+course2.show_students()
+
+classroom1.add_course(course1)
+classroom1.add_course(course2)
+classroom1.show_courses()
+classroom1.delete_course(course1)
+classroom1.show_courses()
