@@ -69,7 +69,7 @@ classDiagram
     class Person{
     -name: String
     -surname: String
-    -age: int
+    -birthdate: Date
     -gender: String
     -mobile_phone: String
     -phone: String
@@ -77,8 +77,8 @@ classDiagram
     -address: String
     -syst_priv : bool
     +new_person(name: String , surname: String, mobile_phone: String, phone: String , email: String, age: int, gender: String, address: String)
-    +set_name(new_name: String ) void
-    +get_info() String
+    +set_mobile_phone(new_mobile_phone: String ) void
+    +get_contact_info() String
     }
 ```
 
