@@ -2,35 +2,7 @@ import datetime
 
 class Person():
 
-    def __init__(self, name:str, surname:str, birthday:datetime.date, gender:str, mobile_phone:str, phone:str, email:str, address:str, syst_priv:bool):
-        
-        # if(type(name) != str):
-        #     print('\n New person creation error. Name must be a string \n')
-        #     exit()
-        # if(type(surname) != str):
-        #     print('\n New person creation error. Surname must be a string \n')
-        #     exit()
-        # if(type(birthday) != type(date.datetime)):
-        #     print('\n New person creation error. Birthday must be a date \n')
-        #     exit()
-        # if(type(gender) != str):
-        #     print('\n New person creation error. Gender must be a string \n')
-        #     exit()            
-        # if(type(mobile_phone) != str):
-        #     print('\n New person creation error. Mobile phone must be a string \n')
-        #     exit()              
-        # if(type(phone) != str):
-        #     print('\n New person creation error. Phone must be a string \n')
-        #     exit()
-        # if(type(email) != str):
-        #     print('\n New person creation error. Email must be a string \n')
-        #     exit()
-        # if(type(address) != str):
-        #     print('\n New person creation error. Address must be a string \n')
-        #     exit()            
-        # if(type(syst_priv) != bool):
-        #     print('\n New person creation error. Syst priv must be a boolean \n')
-        #     exit()                           
+    def __init__(self, name:str, surname:str, birthday:datetime.date, gender:str, mobile_phone:str, phone:str, email:str, address:str, syst_priv:bool):                              
         self.name = name
         self.surname = surname
         self.birthday = birthday

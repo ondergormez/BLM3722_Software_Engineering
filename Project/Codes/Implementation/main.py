@@ -1,6 +1,8 @@
+from calendar import MONDAY
 import person
 import student
 import worker
+import teacher
 import datetime
 
 name = 'Batuhan'
@@ -34,3 +36,19 @@ worker1.update_salary(50000)
 print('Old salary: ', worker1.salary)
 worker1.end_contract()
 print(worker1.end_date)
+
+
+available_days =  ("Monday", "Friday", "Thursday")
+available_hours = (("15:00", "16:00"), ("12:00", "14:00"), ("09:00"))
+language_skills = ("English")
+available_branches = ("Fatih", "Taksim")
+teacher1 = teacher.Teacher(person1, language_skills, available_branches, available_days, available_hours)
+teacher1.set_available_times()
+
+if teacher1.get_available_times("Friday", "12:00") == True:
+    print("SEKS\n")
+else:
+    print("NO SEKS\n")
+
+
+
