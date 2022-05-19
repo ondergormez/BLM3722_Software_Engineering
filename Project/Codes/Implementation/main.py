@@ -26,11 +26,11 @@ print(s1_course_list)
 
 print(student1.payment_infos)
 start_date = datetime.date(1991, 8, 19)
-woker_role = 'Teacher'
-worker1 = worker.Worker(person1, start_date, True, 30000, woker_role)
+worker_role = 'Teacher'
+worker1 = worker.Worker(person1, start_date, True, 30000, worker_role)
 
-print(worker1.salary)
+print('Old salary: ', worker1.salary)
 worker1.update_salary(50000)
-print(worker1.salary)
+print('Old salary: ', worker1.salary)
 worker1.end_contract()
 print(worker1.end_date)

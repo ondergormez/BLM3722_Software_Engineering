@@ -3,12 +3,12 @@ from person import Person
 
 class Worker(Person):
     
-    def __init__(self, person: Person, start_date: datetime.date, active_worker: bool, salary: int, woker_role: str):
+    def __init__(self, person: Person, start_date: datetime.date, active_worker: bool, salary: int, worker_role: str):
         Person.__init__(self, person.name, person.surname, person.birthday, person.gender, person.mobile_phone, person.phone, person.email, person.address, person.syst_priv)
         self.start_date = start_date
         self.active_worker = active_worker
         self.salary = salary
-        self.woker_role = woker_role
+        self.worker_role = worker_role
 
     def __del__(self):
         f_str1 = f"{self.name}" + ' ' + f"{self.surname}"

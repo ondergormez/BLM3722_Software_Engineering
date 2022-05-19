@@ -118,6 +118,7 @@ classDiagram
       -available_hours : String
       +new_teacher(person: Person, languages : vector~String~, available_branches : vector~SchoolBranch~, available_days : String, available_hours : String)  Teacher
      +delete_teacher() bool
+     +show_available_times()
     }
 ```
 
