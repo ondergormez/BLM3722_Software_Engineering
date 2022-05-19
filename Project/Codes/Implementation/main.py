@@ -1,4 +1,3 @@
-from calendar import MONDAY, c
 import person
 import student
 import worker
