@@ -18,12 +18,8 @@ email = 'batuhan_hangun@mymail.com'
 address = '59/5, Maslak, İstanbul'
 person1 = person.Person(name, surname, birthday, gender, mobile_phone, phone, email, address)
 
-print(person1, '\n')
-mp, p, eml, addrss = person1.get_contact_info()
-print(mp, p, eml, addrss, '\n')
-
 student1 = student.Student(person1, ('English', 'German'), ('A1', 'B1'), (4, 5))
-print(student1)
+print(student1.email)
 
 # s1_course_list, total_courses = student1.get_course_list()
 # print(s1_course_list)

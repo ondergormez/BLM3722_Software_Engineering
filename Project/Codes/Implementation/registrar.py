@@ -10,7 +10,7 @@ class Registrar(Worker, Person):
         self.password = password
     
     def __del__(self):
-        f_str1 = f"{self.name}" + ' ' + f"{self.surname}"
-        print(f_str1 + ' was deleted')  
+        f_str1 = f"{self.name} {self.surname}"
+        print(f'{f_str1} was deleted')  
     
     
