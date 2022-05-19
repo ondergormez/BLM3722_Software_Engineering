@@ -1,34 +1,37 @@
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Kayıt Görevlisi
-    participant Bilgi Sistemi
-    participant Öğrenci Modülü
-    participant Öğrenci Kaydı
-    participant Ders Kaydı
+    actor Registrar
+    participant Information System
+    participant Student Registration
+    participant Course Registration
 
-    Kayıt Görevlisi->>+Bilgi Sistemi: Login(userName, Password)
-    alt Login Başarısız
-        Note right of Kayıt Görevlisi: Hatalı şifre veya kullanıcı adı
-        Bilgi Sistemi-->>-Kayıt Görevlisi: errorMessage()
-    else Login Başarılı
-        Note right of Kayıt Görevlisi: Hoşgeldiniz
-        Bilgi Sistemi-->>Kayıt Görevlisi: 
+    Registrar->>+Information System: Login(userName, Password)
+    alt Login Failed
+        Note right of Registrar: Wrong password or username
+        Information System-->>Registrar: errorMessage()
+    else Login Success
+        Note right of Registrar: Welcome
+        Information System-->>-Registrar: 
     end
-    Kayıt Görevlisi->>+Öğrenci Modülü: registerStudent()
-    Öğrenci Modülü->>+Öğrenci Kaydı: addNewStudent(name, surname, ...)
-    alt Yanlış kişisel bilgiler
-        Note right of Kayıt Görevlisi: İlgili kullanıcı bilgisini yanlış ya da eksik girdiniz
-        Öğrenci Kaydı-->>-Kayıt Görevlisi: errorMessage()        
-    else Öğrenci kaydı başarılı
-        Öğrenci Kaydı-->>Kayıt Görevlisi: 
-    end     
 
-    Kayıt Görevlisi->>+Ders Kaydı: addToCourse(courseName)
-    alt Kurs kotası aşıldı
-         Note right of Kayıt Görevlisi: Kursa kaydolabilecek öğrenci sayısını aşmaktasınız
-        Ders Kaydı-->>-Kayıt Görevlisi: errorMessage()
-    else Öğrenci kaydı başarılı
-        Ders Kaydı-->>Kayıt Görevlisi:       
-    end    
+    Registrar->>+Information System: searchStudent(ID)
+    alt Student Found
+        Note right of Registrar: Student was found
+        Information System-->>Registrar: 
+        Information System->>+Course Registration: addToCourse(name, surname, ...)
+        alt No seats available
+        Course Registration-->>Registrar: errorMessage()
+        else Available seats
+        Course Registration-->>-Registrar: 
+        end
+    else No Result
+        Note right of Registrar: Student was not found 
+        Information System-->>+Registrar:       
+        Information System->>-Student Registration: newStudent(name, surname, ...)
+    end
+
+    
+
+  
 ```
