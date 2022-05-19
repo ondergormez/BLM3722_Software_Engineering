@@ -42,7 +42,9 @@ available_days =  ("Monday", "Friday", "Thursday")
 available_hours = (("15:00", "16:00"), ("12:00", "14:00"), ("09:00"))
 language_skills = ("English")
 available_branches = ("Fatih", "Taksim")
-teacher1 = teacher.Teacher(person1, language_skills, available_branches, available_days, available_hours)
+teacher1 = teacher.Teacher(person1, worker1, language_skills, available_branches, available_days, available_hours)
+
+
 teacher1.set_available_times()
 
 if teacher1.get_available_times("Friday", "12:00") == True:
