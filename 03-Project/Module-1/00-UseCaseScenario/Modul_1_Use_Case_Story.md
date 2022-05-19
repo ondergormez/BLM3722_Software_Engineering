@@ -1,12 +1,3 @@
-| Kullanım Senaryosu:        | Birden fazla şube merkezi bir sunucu altında toplanabilmeli, bir şubeden her şube ile ilgili işlem yapılabilmelidir. |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Birincil Aktör:            | Şubeler                                                                                                              |
-| İlgililer ve Beklentileri: | İlgili 1: Kayıt Görevlisi. Tüm şubelerle ilgili kayıt işlemlerini yapabilmeyi beklemektedir.                         |
-|                            | İlgili 2: Sistem Yöneticisi: Tüm şubelerle ilgili tüm işlemleri yapabilmeyi beklemektedir.                           |
-| Ön Koşullar:               | Şube aktif olarak hizmet verebiliyor olmalıdır. Kapatılmış veya yeni açılacak bir şube olmamalıdır.                  |
-| Son Koşullar:              | Şube ile ilgili işlemler tamamlanır. Öğrenci kaydı yapılabiliyor olmalıdır.                                          |
-| Ana Senaryo:               |                                                                                                                      |
-| Alternatif Senaryo:        |                                                                                                                      |
 
 | Kullanım Senaryosu:        | Öğrencinin Ders Kaydı                                                                               |
 | -------------------------- | --------------------------------------------------------------------------------------------------- |
