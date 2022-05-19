@@ -1,8 +1,8 @@
-import datetime as date
+import datetime
 
 class Person():
 
-    def __init__(self, name:str, surname:str, birthday:date.datetime, gender:str, mobile_phone:str, phone:str, email:str, address:str, syst_priv:bool):
+    def __init__(self, name:str, surname:str, birthday:datetime.date, gender:str, mobile_phone:str, phone:str, email:str, address:str, syst_priv:bool):
         
         # if(type(name) != str):
         #     print('\n New person creation error. Name must be a string \n')
@@ -63,3 +63,7 @@ class Person():
         email = self.email
         address = self.address       
         return (mobile_phone, phone, email, address)
+    
+    def __del__(self):
+        f_str1 = f"{self.name}" + ' ' + f"{self.surname}"
+        print(f_str1 + ' was deleted')

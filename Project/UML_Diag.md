@@ -97,14 +97,15 @@ classDiagram
 ```mermaid
 classDiagram
     class Worker{
-      -work_start_date : String 
-      -work_end_date : String 
+      -start_date : String 
+      -end_date : String 
       -active_worker : bool 
       -salary : int 
       -role : String
       +new_worker(person: Person, start_date: String, end_date: String, active_worker : bool, salary: int,  role: String) Worker
       +delete_worker() bool
       +update_salary(new_salary: double) void
+      +end_contract() void
     }
 ```
 
