@@ -75,9 +75,10 @@ classDiagram
     -phone: String
     -email: String
     -address: String
-    +new_person(String name, String surname, String mobile_phone, String phone, String email, int age, String gender, String address)
-    +set_name(String new_name) void
-    +get_name() String
+    -syst_priv : bool
+    +new_person(name: String , surname: String, mobile_phone: String, phone: String , email: String, age: int, gender: String, address: String)
+    +set_name(new_name: String ) void
+    +get_info() String
     }
 
 
@@ -86,9 +87,7 @@ classDiagram
       -course_level :vector~String~ 
       -payment_infos :String 
       +new_student(person: Person, course_list: vector~String~, course_levels: vector~String~, payment_infos: String) Student
-      +delete_student()
-      +add_to_course(course: course) bool
-      +delete_from_course(course: course) bool
+      +delete_student() bool
     }
 
     class Worker{
@@ -97,33 +96,39 @@ classDiagram
       -active_worker : bool 
       -salary : int 
       -role : String
-      +new_worker(person: Person, start_date :String, end_date :String, active_worker :bool, salary : int,  role : String) Worker
-      +deleteWorker(worker: Worker) bool
+      +new_worker(person: Person, start_date: String, end_date: String, active_worker : bool, salary: int,  role: String) Worker
+      +delete_worker() bool
       +update_salary(new_salary: double) void
     }
     
     class Teacher{
-      -t_languages : vector~String~ 
-      -t_classBranches : vector~SchoolBranch~ 
-      -t_availableDays : String 
-      -t_availableHours : String 
-      +newTeacher()  Teacher
+      -languages : vector~String~ 
+      -available_branches : vector~SchoolBranch~ 
+      -available_days : String 
+      -available_hours : String
+      +new_teacher(person: Person, languages : vector~String~, available_branches : vector~SchoolBranch~, available_days : String, available_hours : String)  Teacher
+     +delete_teacher() bool
     }
 
     class Registrar{
-      -userName :String
+      -user_name :String
       -password :String
-      +newRegistrar() Registrar
-      +loginToSystem(userName: String, password: String) bool
-      +registerStudentForClass(student: Student, course: Course) bool 
-      +registerPayment(student: Student, paymentInfo: student.paymentInfos)
+      +new_registrar() Registrar
+      +delete_registrar() bool
+      +log_in(syst_priv : bool, userName: String, password: String) bool
+      +log_out() bool
+      +add_to_course(course: Course) bool
+      +delete_from_course(course: Course) bool
+      +register_payment(student: Student, payment_info: student.payment_infos)
     }
 
     class SystemAdmin{
-      -userName :String
-      -password :String
-      +newSystemAdmin() SystemAdmin
-      +loginToSystem(userName: String, password: String) bool
+      -user_name : String
+      -password : String
+      +new_system_admin() SystemAdmin
+      +log_in(syst_priv : bool, userName: String, password: String) bool
+      +log_out() bool
+      +add_new_branch(new_branch: SchoolBranch)
     }
 
 
@@ -136,59 +141,60 @@ classDiagram
     SchoolBranch *-- Classroom 
     Classroom *-- Course
     class SchoolBranch{
-        -sc_name : String
-        -sc_address : String
-        -sc_publicTransport : String
-        -sc_privateTransport : String
-        -sc_socialBenefits : vector~String~ 
-        -sc_allClasses : vector~ClassRoom~ 
-        +showClassrooms() : vector~ClassRoom~
-        +addNewClassroom(classroom: Classroom) bool
-        +deleteClassroom(classroom: Classroom) bool
+        -name : String
+        -address : String
+        -public_transport : String
+        -private_transport : String
+        -social_benefits : vector~String~ 
+        -all_classes : vector~ClassRoom~ 
+        +show_classrooms() : vector~ClassRoom~
+        +add_classroom(classroom: Classroom) bool
+        +delete_classroom(classroom: Classroom) bool
     }
 
     class Classroom{
-        -cl_name : String
-        -cl_capacity : int
-        -courseList : vector~Course~
-        +showCourses() : vector~Course~
-        +addNewCourse(course: Course) bool
-        +deleteCourse(course: Course) bool       
+        -name : String
+        -capacity : int
+        -course_list : vector~Course~
+        +show_courses() : vector~Course~
+        +add_course(course: Course) bool
+        +delete_course(course: Course) bool       
     }
 
     class Course{
-        -co_name : String
-        -co_capacity : int
-        -co_registeredStudentCount : int
-        -co_level : String
-        -co_course_classroom : Classroom
-        -co_studentList : vector~Student~
-        -co_teacher : Teacher
-        -co_date : Date
-        +setName(newCourseName: String) void
-        +getName() String
-        +showStudents()  vector~Student~
+        -name : String
+        -capacity : int
+        -student_count : int
+        -level : String
+        -course_classroom : Classroom
+        -student_list : vector~Student~
+        -teacher : Teacher
+        -date : Date
+        +set_name(new_course_name: String) void
+        +get_name() String
+        +show_students()  vector~Student~
     }
 ```
 
 ```mermaid
 classDiagram
     class InformationSystem{
-      -i_total_users : int
-      -i_total_branches : int
-      -i_worker_list vector~Worker~
-      -i_student_list vector~Student~
-      +addNewWorker()
-      +deleteWorker()
-      +addNewStudent()
-      +deleteStudent()
-      +addNewBranch()
-      +deleteBranch()
-      +addNewClassroom()
-      +deleteClassroom()
-      +addNewCourse()
-      +deleteCourse()
-      +registerPayment()
+      -total_users : int
+      -total_branches : int
+      -worker_list : vector~Worker~
+      -student_list : vector~Student~
+      -branch_list : vector~SchoolBranch~
+      +add_worker()
+      +delete_worker()
+      +add_new_student()
+      +delete_student()
+      +add_branch()
+      +delete_branch()
+      +add_classroom()
+      +delete_classroom()
+      +add_course()
+      +delete_course()
+      +register_payment()
       +showWorkers() vector~Worker~
     }
 ```
