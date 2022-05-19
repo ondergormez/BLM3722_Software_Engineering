@@ -54,3 +54,11 @@ else:
 
 
 
+# name = "English"
+# capacity = 32
+# student_count = 24
+# level = "Advanced"
+# course_teacher = teacher1
+# classroom = classroom
+# date = date
+# student_list = student_list

@@ -172,7 +172,6 @@ classDiagram
     class Classroom{
         -name : String
         -capacity : int
-        -course_list : vector~Course~
         +show_courses() : vector~Course~
         +add_course(course: Course) bool
         +delete_course(course: Course) bool       
