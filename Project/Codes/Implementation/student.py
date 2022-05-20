@@ -39,3 +39,19 @@ class Student(Person):
     def display_student(self):
         f_str = f"{self.name} {self.surname} {self.id_number}"
         print(f_str)
+
+    def display_student(self):
+        f_str = f"{self.name} {self.surname} {self.id_number}"
+        print(f_str)
+
+    def update_id(self, new_id: str):
+        self.id_number = new_id
+        return self.id_number
+
+    def update_name(self, new_name: str):
+        self.name = new_name
+        return self.name
+
+    def update_email(self, new_email: str):
+        self.email = new_email
+        return self.email
