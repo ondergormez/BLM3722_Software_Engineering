@@ -3,7 +3,7 @@ from person import Person
 
 class Student(Person):
 
-    def __init__(self, person: Person, courses: tuple = (), course_level: tuple = (), payment_infos: tuple = (int)):
+    def __init__(self, person: Person, courses: list = (), course_level: list = (), payment_infos: list = (int)):
         Person.__init__(self, person.name, person.surname, person.id_number, person.birthday, person.gender,
                         person.mobile_phone, person.phone, person.email, person.address, person.syst_priv)
         self.courses = courses
