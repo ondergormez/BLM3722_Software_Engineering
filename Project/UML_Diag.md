@@ -90,6 +90,7 @@ classDiagram
       -payment_infos :String 
       +new_student(person: Person, course_list: vector~String~, course_levels: vector~String~, payment_infos: String) Student
       +get_course_list() : vector~String~
+      +display_student() void
       +delete_student() bool
     }
 ```
@@ -116,9 +117,12 @@ classDiagram
       -available_branches : vector~SchoolBranch~ 
       -available_days : String 
       -available_hours : String
+      -available_times : Dictionary
       +new_teacher(person: Person, languages : vector~String~, available_branches : vector~SchoolBranch~, available_days : String, available_hours : String)  Teacher
      +delete_teacher() bool
+     +set_available_times()
      +get_available_times()
+     +find_teacher(teacher_list: vector~Teacher~, day: String)
     }
 ```
 
@@ -143,9 +147,10 @@ classDiagram
       -user_name : String
       -password : String
       +new_system_admin() SystemAdmin
-      +log_in(syst_priv : bool, userName: String, password: String) bool
-      +log_out() bool
+      +login_to_system()
       +add_new_branch(new_branch: SchoolBranch)
+      +add_classroom(new_classroom: Classroom)
+      +add_new_course(new_course: Course)
     }
 ```
 
@@ -164,8 +169,10 @@ classDiagram
         -public_transport : String
         -private_transport : String
         -social_benefits : vector~String~ 
-        -all_classes : vector~ClassRoom~ 
+        -classroom_list : vector~ClassRoom~ 
+        -classroom_count : int
         +show_classrooms() : vector~ClassRoom~
+        +find_classroom(classroom: Clasroom) int
         +add_classroom(classroom: Classroom) bool
         +delete_classroom(classroom: Classroom) bool
     }
@@ -173,6 +180,15 @@ classDiagram
     class Classroom{
         -name : String
         -capacity : int
+        -course_list : vector~Course~
+        -course_count : int
+        -available_days : vector~String~
+        -available_hours : vector~String~
+        -available_time : dictionary<~String~, vector~String~>
+        +set_available_times()
+        +get_available_times() : vector~String~
+        +find_course(course: Course) int
+        +find_time(course: Course, day: String, hour: String) int
         +show_courses() : vector~Course~
         +add_course(course: Course) bool
         +delete_course(course: Course) bool       
@@ -185,11 +201,18 @@ classDiagram
         -level : String
         -course_classroom : Classroom
         -student_list : vector~Student~
+        -student_count : int
         -teacher : Teacher
         -date : Date
-        +set_name(new_course_name: String) void
+        +set_course_name(new_course_name: String) void
         +get_name() String
+        +find_student(student: Student) int
+        +add_student(new_student: Student) void
+        +delete_student(student: Student) void
         +show_students()  vector~Student~
+        +get_student_list() vector~Student~
+        +show_students() void
+        +check_course_time( course: Course) bool
     }
 ```
 
@@ -200,19 +223,9 @@ classDiagram
       -total_branches : int
       -worker_list : vector~Worker~
       -student_list : vector~Student~
+      -teacher_list : vector~Teacher~
       -branch_list : vector~SchoolBranch~
-      +add_worker()
-      +delete_worker()
-      +add_new_student()
-      +delete_student()
-      +add_branch()
-      +delete_branch()
-      +add_classroom()
-      +delete_classroom()
-      +add_course()
-      +delete_course()
-      +register_payment()
-      +showWorkers() vector~Worker~
+      +get_teacher_list() : vector~Teacher~
     }
 ```
 
