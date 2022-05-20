@@ -16,13 +16,12 @@ class SchoolBranch():
         self.social_benefits = social_benefits
         self.classrooms = classrooms
 
-    def add_course(self, new_classroom: Classroom):
-        for class_ind in range(len(self.classrooms)):
-            temp_classroom = self.classrooms[class_ind]
-
-        if(course.capacity <= self.capacity):
-            self.course_list.append(course)
-            self.course_count += 1
+    def add_classroom(self, new_classroom: Classroom):
+        for classroom_ind in range(len(self.classrooms)):
+            temp_classroom = self.classrooms[classroom_ind]
+            if(temp_classroom != self):
+                self.classrooms.append(temp_classroom)
+                self.classroom_count += 1
 
     def show_classrooms(self):
         for class_ind in range(len(self.classrooms)):
