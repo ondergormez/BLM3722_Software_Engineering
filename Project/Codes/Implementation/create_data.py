@@ -357,4 +357,4 @@ information_system1.branch_list.append(branch4)
 print(branch1.classroom_count)
 
 branch1.find_classroom(classroom1)
-# sysadmin1.add_new_course()
+sysadmin1.add_new_course(information_system1, branch1, classroom1, course1)
