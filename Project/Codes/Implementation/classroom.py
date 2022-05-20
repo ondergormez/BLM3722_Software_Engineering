@@ -20,7 +20,6 @@ class Classroom():
 
     def __del__(self):
         f_str1 = f"{self.name}"
-        print(f'Classroom{f_str1} was deleted')
 
     def set_available_times(self):
         tup_len = len(self.available_days)

@@ -34,20 +34,12 @@ class Teacher(Worker, Person):
 
     def __del__(self):
         f_str1 = f"{self.name} " + f"{self.surname}"
-        print(f'{f_str1} was deleted')
 
     def set_available_times(self):
         tup_len = len(self.available_days)
         for key in range(tup_len):
             self.available_times[self.available_days[key]
                                  ] = self.available_hours[key]
-
-    # def get_available_times(self, day: str, hour: str) -> bool:
-    #     if day in self.available_times:
-    #         if hour in self.available_times[day]:
-    #             return True
-    #     else:
-    #         return False
 
     def get_available_times(self) -> list:
         # avail_days_list = []

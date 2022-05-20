@@ -14,10 +14,10 @@ class Worker(Person):
 
     def __del__(self):
         f_str1 = f"{self.name} {self.surname}"
-        print(f'{f_str1} was deleted')
 
     def update_salary(self, new_salary: float):
         self.salary = new_salary
+        return self.salary
 
     def end_contract(self):
         self.end_date = datetime.date.today()

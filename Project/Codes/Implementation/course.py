@@ -25,7 +25,6 @@ class Course():
 
     def __del__(self):
         f_str1 = f"{self.name}"
-        print(f'Course {f_str1} was deleted')
 
     def set_course_name(self, new_name: str):
         self.name = new_name
@@ -58,13 +57,6 @@ class Course():
 
     def delete_student(self, student: Student):
         found_ind = Course.find_student(self, student)
-        # for student_ind in range(len(self.student_list)):
-        #     temp_stud = self.student_list[student_ind]
-        #     if(temp_stud.id_number == student.id_number):
-        #         found_ind = student_ind
-        #         break
-        #     else:
-        #         found_ind = -1
         if(found_ind > -1):
             self.student_list.pop(found_ind)
             self.student_count -= 1

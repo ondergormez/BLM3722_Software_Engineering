@@ -27,7 +27,6 @@ class Person():
 
     def __del__(self):
         f_str1 = f"{self.name} {self.surname}"
-        print(f'{f_str1} was deleted')
 
     def __eq__(self, other_object) -> bool:
         if isinstance(other_object, Person):

@@ -10,5 +10,3 @@ class InformationSystem():
 
     def get_teacher_list(self) -> list:
         return self.teacher_list
-
-    # def find_teacher(self, teacher)
