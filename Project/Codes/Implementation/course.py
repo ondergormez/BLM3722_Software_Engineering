@@ -6,7 +6,7 @@ import datetime
 class Course():
 
     def __init__(self, name: str, capacity: int,
-                 level: str, course_teacher: Teacher, classroom: str,
+                 level: str, course_teacher: Teacher = None, classroom: str = None,
                  date: tuple = ()
                  ) -> None:
         self.name = name
@@ -14,8 +14,9 @@ class Course():
         self.level = level
         self.course_teacher = course_teacher
         self.classroom = classroom
-        self.day = date[0]
-        self.hour = date[1]
+        if(len(date) != 0):
+            self.day = date[0]
+            self.hour = date[1]
         self.student_list = []
         self.student_count = 0
 

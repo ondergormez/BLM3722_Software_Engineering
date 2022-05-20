@@ -1,8 +1,10 @@
+from decimal import Clamped
 from classroom import Classroom
 from person import Person
 from worker import Worker
 from course import Course
 from student import Student
+from teacher import Teacher
 from school_branch import SchoolBranch
 from information_system import InformationSystem
 
@@ -23,7 +25,12 @@ class SystemAdmin(Worker, Person):
     def add_classroom(self, branch: SchoolBranch, new_classroom: Classroom):
         branch.add_classroom(new_classroom)
 
-    def add_new_course(self, branch: SchoolBranch, classroom: Classroom, new_course: Course):
-        classroom_found = SchoolBranch.find_classroom(self, classroom)
+    def add_new_course(self, information_system: InformationSystem, branch: SchoolBranch, classroom: Classroom, new_course: Course):
+
+        classroom_found = SchoolBranch.find_classroom(SchoolBranch, classroom)
 
         if(classroom_found == -1):
+            print(f"{classroom.name} was not in the {branch.name}")
+        else:
+            Classroom.add_course(Classroom, new_course)
+            # # Available_days içinde dolu olmayanları çek ve yeni liste oluştur

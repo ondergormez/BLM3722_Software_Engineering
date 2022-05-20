@@ -1,3 +1,4 @@
+from venv import create
 import person
 import student
 import worker
@@ -8,9 +9,34 @@ import classroom
 import school_branch
 import datetime
 import information_system
+import systemAdmin
 import create_data
 
+information_system1 = information_system.InformationSystem(
+    create_data.information_system1, create_data.information_system1.total_branches)
 
+branch1 = school_branch.SchoolBranch(create_data.branch1, create_data.branch1.id_num, create_data.branch1.address,
+                                     create_data.branch1.public_transport, create_data.branch1.private_transport, create_data.branch1.social_benefits)
+classroom1 = classroom.Classroom(
+    create_data.classroom1, create_data.classroom1.capacity)
+course1 = course.Course(
+    create_data.course1, create_data.course1.capacity, create_data.course1.level)
+
+
+# day = 'Wednesday'
+# teach_list = teacher.Teacher.find_teacher(
+#     teacher.Teacher, create_data.information_system1.teacher_list, day)
+
+# for list_index in range(len(teach_list)):
+#     f_str = f"{teach_list[list_index].name} {teach_list[list_index].surname}"
+#     print(f_str)
+
+# print(create_data.teacher1.available_times)
+# create_data.teacher1.get_available_times()
+# create_data.classroom1.get_available_times()
+print(branch1.classroom_count)
+create_data.sysadmin1.add_new_course(
+    information_system1, branch1, classroom1, course1)
 # classroom_name = "A134"
 # classroom_capacity = 32
 # classroom1 = classroom.Classroom(classroom_name, classroom_capacity)

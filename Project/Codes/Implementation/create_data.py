@@ -3,7 +3,11 @@ import student
 import worker
 import teacher
 import registrar
+import systemAdmin
 import information_system
+import course
+import classroom
+import school_branch
 import datetime
 
 # Student1
@@ -93,10 +97,10 @@ person5 = person.Person(name, surname, id_number, birthday, gender,
 start_date = datetime.date(2010, 3, 12)
 worker_role = 'Teacher'
 worker1 = worker.Worker(person5, start_date, True, 30000, worker_role)
-available_days = ["Monday", "Friday", "Thursday"]
-available_hours = (("15:00", "16:00"), ("12:00", "14:00"), ("09:00"))
-language_skills = ("Russian")
-available_branches = ("Şişli", "Levent")
+available_days = ["Monday", "Thursday", "Friday"]
+available_hours = [["15:00", "16:00"], ["12:00", "14:00"], ["09:00"]]
+language_skills = ["Russian"]
+available_branches = ["Şişli", "Levent"]
 teacher1 = teacher.Teacher(person5, worker1, language_skills,
                            available_branches, available_days, available_hours)
 teacher1.set_available_times()
@@ -117,9 +121,9 @@ start_date = datetime.date(2010, 3, 12)
 worker_role = 'Teacher'
 worker2 = worker.Worker(person6, start_date, True, 40000, worker_role)
 available_days = ["Wednesday"]
-available_hours = (("15:00", "16:00", "17:00"))
-language_skills = ("German")
-available_branches = ("Maslak", "Levent")
+available_hours = [["15:00", "16:00", "17:00"]]
+language_skills = ["German"]
+available_branches = ["Maslak", "Levent"]
 teacher2 = teacher.Teacher(person6, worker2, language_skills,
                            available_branches, available_days, available_hours)
 teacher2.set_available_times()
@@ -140,9 +144,9 @@ start_date = datetime.date(2010, 3, 12)
 worker_role = 'Teacher'
 worker3 = worker.Worker(person7, start_date, True, 40000, worker_role)
 available_days = ["Thursday", "Monday"]
-available_hours = (("15:00", "16:00", "17:00"), ("09:00", "11:00"))
-language_skills = ("French")
-available_branches = ("Levent")
+available_hours = [["15:00", "16:00", "17:00"], ["09:00", "11:00"]]
+language_skills = ["French"]
+available_branches = ["Levent"]
 teacher3 = teacher.Teacher(person7, worker3, language_skills,
                            available_branches, available_days, available_hours)
 teacher3.set_available_times()
@@ -163,9 +167,9 @@ start_date = datetime.date(2010, 3, 12)
 worker_role = 'Teacher'
 worker4 = worker.Worker(person8, start_date, True, 40000, worker_role)
 available_days = ["Monday", "Friday"]
-available_hours = (("15:00", "17:00"), ("09:00"))
-language_skills = ("English")
-available_branches = ("Fatih")
+available_hours = [["15:00", "17:00"], ["09:00"]]
+language_skills = ["English"]
+available_branches = ["Fatih"]
 teacher4 = teacher.Teacher(person8, worker4, language_skills,
                            available_branches, available_days, available_hours)
 teacher4.set_available_times()
@@ -206,20 +210,151 @@ worker_role = 'Registrar'
 worker6 = worker.Worker(person10, start_date, True, 40000, worker_role)
 user_name = "jack_s"
 user_password = "bad*546-mf*"
-sysadmin1 = registrar.Registrar(person10, worker6, user_name, user_password)
+sysadmin1 = systemAdmin.SystemAdmin(
+    person10, worker6, user_name, user_password)
+
+# Classroom1
+classroom_name = "A134"
+classroom_capacity = 32
+available_days = ["Monday", "Friday"]
+available_hours = [["15:00", "17:00"], ["09:00"]]
+classroom1 = classroom.Classroom(
+    classroom_name, classroom_capacity, available_days, available_hours)
+classroom1.set_available_times()
+
+# Classroom2
+classroom_name = "A135"
+classroom_capacity = 30
+available_days = ["Tuesday", "Wednesday", "Friday"]
+available_hours = [["09:00", "11:00"], ["13:00"], ["12:00"]]
+classroom2 = classroom.Classroom(
+    classroom_name, classroom_capacity, available_days, available_hours)
+classroom2.set_available_times()
+
+# Classroom3
+classroom_name = "A136"
+classroom_capacity = 25
+available_days = ["Tuesday", "Wednesday"]
+available_hours = [["09:00", "11:00"], ["13:00"]]
+classroom3 = classroom.Classroom(
+    classroom_name, classroom_capacity, available_days, available_hours)
+classroom3.set_available_times()
+
+# Classroom4
+classroom_name = "A137"
+classroom_capacity = 20
+available_days = ["Wednesday", "Friday"]
+available_hours = [["12:00"], ["15:00"]]
+classroom4 = classroom.Classroom(
+    classroom_name, classroom_capacity, available_days, available_hours)
+classroom4.set_available_times()
+
+# Branch1
+branch_name = "Maslak"
+branch_address = "Ayazağa, 34/2"
+id_num = "543463"
+public_transport = "41AT, 500T, 41ST"
+private_transport = ["E6 Otoyolu", "E5 Otoyolu"]
+social_benefits = ["Langırt", "PS5"]
+branch1 = school_branch.SchoolBranch(
+    branch_name, id_num, branch_address, public_transport, private_transport, social_benefits)
+branch1.add_classroom(classroom1)
+branch1.add_classroom(classroom2)
+branch1.add_classroom(classroom3)
+branch1.add_classroom(classroom4)
+
+# Branch2
+branch_name = "Şişli"
+branch_address = "Şişli, 34/2"
+id_num = "543463"
+public_transport = "41AT, 500T, 41ST"
+private_transport = ["E6 Otoyolu", "E5 Otoyolu"]
+social_benefits = ["PS5"]
+branch2 = school_branch.SchoolBranch(
+    branch_name, id_num, branch_address, public_transport, private_transport, social_benefits)
+branch2.add_classroom(classroom1)
+branch2.add_classroom(classroom2)
+branch2.add_classroom(classroom3)
+
+# Branch3
+branch_name = "Levent"
+branch_address = "Levent, 34/2"
+id_num = "543463"
+public_transport = "41AT, 500T, 41ST"
+private_transport = ["E6 Otoyolu", "E5 Otoyolu"]
+social_benefits = ["Langırt", "PS5"]
+branch3 = school_branch.SchoolBranch(
+    branch_name, id_num, branch_address, public_transport, private_transport, social_benefits)
+branch3.add_classroom(classroom2)
+branch3.add_classroom(classroom3)
+
+# Branch4
+branch_name = "Beşiktaş"
+branch_address = "Ortaköy, 11/2"
+id_num = "543463"
+public_transport = "41AT, 500T, 41ST"
+private_transport = ["E6 Otoyolu", "E5 Otoyolu"]
+social_benefits = ["Langırt", "PS5"]
+branch4 = school_branch.SchoolBranch(
+    branch_name, id_num, branch_address, public_transport, private_transport, social_benefits)
+branch4.add_classroom(classroom1)
+branch4.add_classroom(classroom4)
+# Course 1
+name = "Russian"
+capacity = 32
+student_count = 24
+level = "A1"
+course1 = course.Course(name, capacity, level)
+
+# Course 2
+name = "English"
+capacity = 30
+student_count = 20
+level = "A2"
+course1 = course.Course(name, capacity, level)
+
+# Course 3
+name = "German"
+capacity = 32
+student_count = 24
+level = "B1"
+course1 = course.Course(name, capacity, level)
+
+# Course 4
+name = "French"
+capacity = 32
+student_count = 24
+level = "C2"
+course1 = course.Course(name, capacity, level)
+
 
 # Init info. system
 total_users = 10
-total_branches = 0
+total_branches = 4
 information_system1 = information_system.InformationSystem(
     total_users, total_branches)
 
-information_system1.student_list[0] = student1
-information_system1.student_list[1] = student2
-information_system1.student_list[2] = student3
-information_system1.student_list[3] = student4
+information_system1.student_list.append(student1)
+information_system1.student_list.append(student2)
+information_system1.student_list.append(student3)
+information_system1.student_list.append(student4)
 
-information_system1.worker_list[0] = worker1
-information_system1.worker_list[1] = worker2
-information_system1.worker_list[2] = worker3
-information_system1.worker_list[3] = worker4
+information_system1.worker_list.append(worker1)
+information_system1.worker_list.append(worker2)
+information_system1.worker_list.append(worker3)
+information_system1.worker_list.append(worker4)
+
+information_system1.teacher_list.append(teacher1)
+information_system1.teacher_list.append(teacher2)
+information_system1.teacher_list.append(teacher3)
+information_system1.teacher_list.append(teacher4)
+
+information_system1.branch_list.append(branch1)
+information_system1.branch_list.append(branch2)
+information_system1.branch_list.append(branch3)
+information_system1.branch_list.append(branch4)
+
+print(branch1.classroom_count)
+
+branch1.find_classroom(classroom1)
+# sysadmin1.add_new_course()

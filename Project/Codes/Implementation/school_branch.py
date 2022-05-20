@@ -5,26 +5,29 @@ class SchoolBranch():
 
     def __init__(self, name: str, id_num: str, address: str,
                  public_transport: list, private_transport: list,
-                 social_benefits: list) -> None:
+                 social_benefits: list, classroom_count: int = None):
         self.name = name
-        if(id_num.isdigit()):
-            self.id_num = id_num
-        else:
-            print("Invalid branch id format\n")
         self.address = address
         self.public_transport = public_transport
         self.private_transport = private_transport
         self.social_benefits = social_benefits
         self.classroom_list = []
-        self.classroom_count = 0
+        if(classroom_count == None):
+            self.classroom_count = 0
+        else:
+            self.classroom_count = classroom_count
+        if(id_num.isdigit()):
+            self.id_num = id_num
+        else:
+            print("Invalid branch id format\n")
         print(f"New branch {self.name} created in {self.address}")
 
     def find_classroom(self, classroom: Classroom) -> int:
         found_ind = -1
         course_ind = 0
-        while found_ind < 0 and course_ind < self.classroom_count:
+        while ((found_ind < 0) and (course_ind < self.classroom_count)):
             temp_course = self.classroom_list[course_ind]
-            if((temp_course.name == classroom.name)):
+            if(temp_course.name == classroom.name):
                 print(
                     f"Classroom with same name was found at index {course_ind}\n")
                 found_ind = course_ind
