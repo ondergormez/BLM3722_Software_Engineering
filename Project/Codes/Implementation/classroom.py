@@ -7,13 +7,12 @@ class Classroom():
     def __init__(self, name, capacity: int) -> None:
         self.name = name
         self.capacity = capacity
+        self.course_list = []
+        self.course_count = 0
 
     def __del__(self):
         f_str1 = f"{self.name}"
         print(f'Classroom{f_str1} was deleted')
-
-    course_list = []
-    course_count = 0
 
     def find_course(self, course: Course) -> int:
         found_ind = -1
