@@ -206,7 +206,7 @@ address = '66/2, Şişli, İstanbul'
 person10 = person.Person(name, surname, id_number, birthday, gender,
                          mobile_phone, phone, email, address)
 start_date = datetime.date(2010, 3, 12)
-worker_role = 'Registrar'
+worker_role = 'SystemAdmin'
 worker6 = worker.Worker(person10, start_date, True, 40000, worker_role)
 user_name = "jack_s"
 user_password = "bad*546-mf*"
@@ -359,3 +359,5 @@ print(branch1.classroom_count)
 branch1.find_classroom(classroom1)
 sysadmin1.add_new_course(information_system1, branch1,
                          classroom1, course1, 'Monday', '13:00')
+
+sysadmin1.login_to_system()

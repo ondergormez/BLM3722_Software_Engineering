@@ -34,3 +34,11 @@ class SystemAdmin(Worker, Person):
         else:
             Classroom.add_course(classroom, new_course, day, hour)
             # # Available_days içinde dolu olmayanları çek ve yeni liste oluştur
+
+    def login_to_system(self):
+        user_name = input('Username: ')
+        user_password = input('Password: ')
+        if(user_name == self.user_name and user_password == self.password):
+            print('Welcome', self.name)
+        else:
+            print('You don\'t have access to information system')
