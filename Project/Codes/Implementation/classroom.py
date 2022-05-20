@@ -1,4 +1,3 @@
-from student import Student
 from course import Course
 
 
@@ -61,7 +60,7 @@ class Classroom():
                 course_ind += 1
         return found_ind
 
-    def add_course(self, new_course: Course):
+    def add_course(self, new_course: Course, day: str, hour: str):
         found_ind = Classroom.find_course(self, new_course)
         print("Course found: ", found_ind)
         time_ind = Classroom.find_time(self, new_course)
@@ -72,6 +71,8 @@ class Classroom():
         else:
             self.course_list.append(new_course)
             self.course_count += 1
+            new_course.day = day
+            new_course.hour = hour
             print(
                 f"{new_course.name} ({new_course.level}) was opened in {self.name} at {new_course.day} {new_course.hour}\n")
 

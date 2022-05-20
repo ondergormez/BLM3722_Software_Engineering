@@ -311,21 +311,21 @@ name = "English"
 capacity = 30
 student_count = 20
 level = "A2"
-course1 = course.Course(name, capacity, level)
+course2 = course.Course(name, capacity, level)
 
 # Course 3
 name = "German"
 capacity = 32
 student_count = 24
 level = "B1"
-course1 = course.Course(name, capacity, level)
+course3 = course.Course(name, capacity, level)
 
 # Course 4
 name = "French"
 capacity = 32
 student_count = 24
 level = "C2"
-course1 = course.Course(name, capacity, level)
+course4 = course.Course(name, capacity, level)
 
 
 # Init info. system
@@ -357,4 +357,5 @@ information_system1.branch_list.append(branch4)
 print(branch1.classroom_count)
 
 branch1.find_classroom(classroom1)
-sysadmin1.add_new_course(information_system1, branch1, classroom1, course1)
+sysadmin1.add_new_course(information_system1, branch1,
+                         classroom1, course1, 'Monday', '13:00')

@@ -17,6 +17,9 @@ class Course():
         if(len(date) != 0):
             self.day = date[0]
             self.hour = date[1]
+        else:
+            self.day = ""
+            self.hour = ""
         self.student_list = []
         self.student_count = 0
 

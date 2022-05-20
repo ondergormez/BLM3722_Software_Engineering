@@ -25,12 +25,12 @@ class SystemAdmin(Worker, Person):
     def add_classroom(self, branch: SchoolBranch, new_classroom: Classroom):
         branch.add_classroom(new_classroom)
 
-    def add_new_course(self, information_system: InformationSystem, branch: SchoolBranch, classroom: Classroom, new_course: Course):
+    def add_new_course(self, information_system: InformationSystem, branch: SchoolBranch, classroom: Classroom, new_course: Course, day: str, hour: str):
 
         classroom_found = SchoolBranch.find_classroom(branch, classroom)
 
         if(classroom_found == -1):
             print(f"{classroom.name} was not in the {branch.name}")
         else:
-            Classroom.add_course(classroom, new_course)
+            Classroom.add_course(classroom, new_course, day, hour)
             # # Available_days içinde dolu olmayanları çek ve yeni liste oluştur
