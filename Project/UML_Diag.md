@@ -159,6 +159,7 @@ classDiagram
     Classroom *-- Course
     class SchoolBranch{
         -name : String
+        -id : String
         -address : String
         -public_transport : String
         -private_transport : String
