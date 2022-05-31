@@ -10,7 +10,7 @@ import course
 import classroom
 import school_branch
 import datetime
-
+import getpass
 
 # Student1
 name = 'Batuhan'
@@ -192,7 +192,7 @@ start_date = datetime.date(2010, 3, 12)
 worker_role = 'Registrar'
 worker5 = worker.Worker(person9, start_date, True, 40000, worker_role)
 user_name = "ogormez"
-user_password = "gormez*123-*"
+user_password = "gormez*123"
 registrar1 = registrar.Registrar(person9, worker5, user_name, user_password)
 
 # SysAdmin1
@@ -211,7 +211,7 @@ start_date = datetime.date(2010, 3, 12)
 worker_role = 'SystemAdmin'
 worker6 = worker.Worker(person10, start_date, True, 40000, worker_role)
 user_name = "jack_s"
-user_password = "bad*546-mf*"
+user_password = "badmf1994"
 sysadmin1 = systemAdmin.SystemAdmin(
     person10, worker6, user_name, user_password)
 
@@ -227,6 +227,7 @@ helper_functions.print_star(len_welcome_message)
 correct_operation = False
 while not correct_operation:
     operation_type = input("Selected operation: ")
+    # System admin
     if operation_type == str(1):
         correct_operation = True
         print('Please login with your system admin username and password: ')
@@ -235,6 +236,22 @@ while not correct_operation:
             info_message_2 = f"{'Select an operation to continue'}"
             print(info_message_2)
             helper_functions.print_system_admin_menu()
+            correct_operation = False
+            while not correct_operation:
+                operation_type = input("Selected operation: ")
+                if operation_type == str(1):
+                    correct_operation = True
+                    branch_name_new = input("Branch name: ")
+                    branch_address_new = input("Branch address: ")
+                    id_num_new = input("Branch ID number: ")
+                    public_transport_new = input("Branch public transport: ")
+                    private_transport_new = input("Branch private transport: ")
+                    social_benefits_new = input("Branch social activities: ")
+                    branch_newbranch = school_branch.SchoolBranch(
+                        branch_name_new, id_num_new, branch_address_new, public_transport_new, private_transport_new, social_benefits_new)
+                else:
+                    print('Wrong operation type. Try again.')
+    # Registrar
     elif operation_type == str(2):
         correct_operation = True
         print('Please login with your course registrar username and password: ')
@@ -243,5 +260,7 @@ while not correct_operation:
             info_message_2 = f"{'Select an operation to continue'}"
             print(info_message_2)
             helper_functions.print_course_registrar_menu()
+            operation_type = input("Selected operation: ")
+
     else:
         print('Wrong operation type. Try again.')

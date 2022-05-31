@@ -7,6 +7,7 @@ from student import Student
 from teacher import Teacher
 from school_branch import SchoolBranch
 from information_system import InformationSystem
+import getpass
 
 
 class SystemAdmin(Worker, Person):
@@ -40,7 +41,7 @@ class SystemAdmin(Worker, Person):
     def login_to_system(self) -> bool:
         while self.num_attempts != 0:
             user_name = input('Username: ')
-            user_password = input('Password: ')
+            user_password = getpass.getpass('Password: ')
             if(user_name == str(self.user_name) and user_password == str(self.password)):
                 print('Welcome', self.name)
                 return True

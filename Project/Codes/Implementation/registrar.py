@@ -2,6 +2,7 @@ from person import Person
 from worker import Worker
 from course import Course
 from student import Student
+import getpass
 
 
 class Registrar(Worker, Person):
@@ -28,7 +29,8 @@ class Registrar(Worker, Person):
     def login_to_system(self) -> bool:
         while self.num_attempts != 0:
             user_name = input('Username: ')
-            user_password = input('Password: ')
+            # input('Password: ')
+            user_password = getpass.getpass('Password: ')
             if(user_name == str(self.user_name) and user_password == str(self.password)):
                 print('Welcome', self.name)
                 return True
