@@ -18,6 +18,9 @@ class Registrar(Worker, Person):
     def __del__(self):
         f_str1 = f"{self.name} {self.surname}"
 
+    def add_new_student_to_branch(self, new_student: Student, branch_student_list: list):
+        branch_student_list.append(new_student)
+
     def add_student_to_course(self, new_student: Student, course: Course):
         Course.add_student(course, new_student)
 

@@ -84,6 +84,9 @@ payment_infos = [3, 5]
 student4 = student.Student(
     person4, course_list, course_levels, payment_infos)
 
+student_list = [student1, student2, student3, student4]
+helper_functions.print_student_list(student_list)
+
 # Teacher1
 name = 'Gregory'
 surname = 'Ruslanov'
@@ -260,7 +263,31 @@ while not correct_operation:
             info_message_2 = f"{'Select an operation to continue'}"
             print(info_message_2)
             helper_functions.print_course_registrar_menu()
-            operation_type = input("Selected operation: ")
-
+            correct_operation = False
+            while not correct_operation:
+                operation_type = input("Selected operation: ")
+                if operation_type == str(1):
+                    correct_operation = True
+                    student_name_new = input("Name: ")
+                    student_surname_new = input("Surname: ")
+                    student_id_num_new = input("ID number: ")
+                    student_birthday_new = input("Student birthday: ")
+                    student_gender_new = input("Gender: ")
+                    student_mobile_phone_new = input("Mobile phone: ")
+                    student_phone_new = input("Phone: ")
+                    student_email_new = input("E-mail address: ")
+                    student_address_new = input("Address: ")
+                    person_new__ = person.Person(student_name_new, student_surname_new, student_id_num_new, student_birthday_new, student_gender_new,
+                                                 student_mobile_phone_new, student_phone_new, student_email_new, student_address_new)
+                    student_course_new = input("Course name: ")
+                    student_course_level = input("Level: ")
+                    payment_info_new = input("Payment info: ")
+                    student_new__ = student.Student(
+                        person_new__, student_course_new, student_course_level, payment_info_new)
+                    registrar1.add_new_student_to_branch(
+                        student_new__, student_list)
+                    helper_functions.print_student_list(student_list)
+                else:
+                    print('Wrong operation type. Try again.')
     else:
         print('Wrong operation type. Try again.')
