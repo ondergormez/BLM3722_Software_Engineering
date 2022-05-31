@@ -85,7 +85,6 @@ student4 = student.Student(
     person4, course_list, course_levels, payment_infos)
 
 student_list = [student1, student2, student3, student4]
-helper_functions.print_student_list(student_list)
 
 # Teacher1
 name = 'Gregory'
