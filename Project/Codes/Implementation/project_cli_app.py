@@ -195,6 +195,26 @@ user_name = "ogormez"
 user_password = "gormez*123-*"
 registrar1 = registrar.Registrar(person9, worker5, user_name, user_password)
 
+# SysAdmin1
+name = 'Samuel'
+surname = 'Jackson'
+id_number = '3333333'
+birthday = datetime.date(1960, 12, 21)
+gender = 'Male'
+mobile_phone = '051236653244'
+phone = '02129544878'
+email = 'SamuelJackson@mymail.com'
+address = '66/2, Şişli, İstanbul'
+person10 = person.Person(name, surname, id_number, birthday, gender,
+                         mobile_phone, phone, email, address)
+start_date = datetime.date(2010, 3, 12)
+worker_role = 'SystemAdmin'
+worker6 = worker.Worker(person10, start_date, True, 40000, worker_role)
+user_name = "jack_s"
+user_password = "bad*546-mf*"
+sysadmin1 = systemAdmin.SystemAdmin(
+    person10, worker6, user_name, user_password)
+
 welcome_message_1 = f"{'Welcome to Bir Lisan Bir İnsan Automation System'}"
 len_welcome_message = len(welcome_message_1)
 helper_functions.print_star(len_welcome_message)
@@ -210,7 +230,11 @@ while not correct_operation:
     if operation_type == str(1):
         correct_operation = True
         print('Please login with your system admin username and password: ')
-        helper_functions.print_system_admin_menu()
+        login_status = sysadmin1.login_to_system()
+        if login_status == True:
+            info_message_2 = f"{'Select an operation to continue'}"
+            print(info_message_2)
+            helper_functions.print_system_admin_menu()
     elif operation_type == str(2):
         correct_operation = True
         print('Please login with your course registrar username and password: ')

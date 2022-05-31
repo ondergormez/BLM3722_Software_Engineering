@@ -35,11 +35,18 @@ class SystemAdmin(Worker, Person):
             Classroom.add_course(classroom, new_course, day, hour)
             # # Available_days içinde dolu olmayanları çek ve yeni liste oluştur
 
-    def login_to_system(self):
-        user_name = input('Username: ')
-        user_password = input('Password: ')
-        if(user_name == self.user_name and user_password == self.password):
-            print('Welcome', self.name)
+    num_attempts = 5
 
-        else:
-            print('You don\'t have access to information system')
+    def login_to_system(self) -> bool:
+        while self.num_attempts != 0:
+            user_name = input('Username: ')
+            user_password = input('Password: ')
+            if(user_name == str(self.user_name) and user_password == str(self.password)):
+                print('Welcome', self.name)
+                return True
+            else:
+                self.num_attempts = self.num_attempts - 1
+                error_message = f"{'Wrong username or password. Try again. Number of attempts until lockout: '}" f"{self.num_attempts}"
+                print(error_message)
+            print(f"{'Out of login attempts. Lockedout...'}")
+        return False
