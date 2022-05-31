@@ -22,3 +22,19 @@ class Registrar(Worker, Person):
 
     def register_payment(self, student: Student, course_name: str):
         student.payment_infos[student.courses == course_name] += 1
+
+    num_attempts = 5
+
+    def login_to_system(self) -> bool:
+        while self.num_attempts != 0:
+            user_name = input('Username: ')
+            user_password = input('Password: ')
+            if(user_name == str(self.user_name) and user_password == str(self.password)):
+                print('Welcome', self.name)
+                return True
+            else:
+                self.num_attempts = self.num_attempts - 1
+                error_message = f"{'Wrong username or password. Try again. Number of attempts until lockout: '}" f"{self.num_attempts}"
+                print(error_message)
+            print(f"{'Out of login attempts. Lockedout...'}")
+        return False
